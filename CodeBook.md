@@ -67,8 +67,12 @@ data_set <- tbl_df(data_set)
 #2.Extracts only the measurements on the mean and standard deviation for each measurement as m & sd
 m <- sapply(data_set[, 2:(nrow(cname)+1)], mean)
 sd <- sapply(data_set[, 2:(nrow(cname)+1)], sd)
-
+summary(m)
+summary(sd)
+```
+[]
+```
 #5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject as g
 g <- aggregate(data_set[, 2:(nrow(cname)+1)], by = data_set[, 1], mean)
 ```
-
+[g]!
