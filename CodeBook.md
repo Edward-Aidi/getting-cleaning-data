@@ -14,13 +14,16 @@ library(dplyr)
 #read the column names of the X_test/train data set from "feature"
 cname <- read.table("./getting & cleaning data project/UCI HAR Dataset/features.txt",
                     col.names = c("seq", "column.name"))
-
+```
+### `canme` represent all the variables in the X.txt and I will use that to name the columns of X_test or X_train data.
+### Usig `gsub` & `mutate` function, I am able to use descriptive names for the y_test and y_train.
+```
 #read X_test.txt and give it column names as te
 te <- read.table("./getting & cleaning data project/UCI HAR Dataset/test/X_test.txt",
                  col.names = cname$column.name
                 )
 
-#read y_test.txt and use descriptive activity anmes as tel
+#read y_test.txt and use descriptive activity names as tel
 tel <- read.table("./getting & cleaning data project/UCI HAR Dataset/test/y_test.txt",
                col.names = "label")
 testlabel <- tel$label
@@ -38,7 +41,7 @@ tr <- read.table("./getting & cleaning data project/UCI HAR Dataset/train/X_trai
                       col.names = cname$column.name
                      )
 
-#read y_train.txt and use descriptive activity anmes as trl
+#read y_train.txt and use descriptive activity names as trl
 trl <- read.table("./getting & cleaning data project/UCI HAR Dataset/train/y_train.txt",
                   col.names = "label")
 testlabel <- trl$label
@@ -50,19 +53,22 @@ testlabel <- gsub("5", "STANDING", testlabel)
 testlabel <- gsub("6", "LAYING", testlabel)
 trl <- mutate(trl, label = testlabel)
 trl <- tbl_df(trl)
-
+```
+### Then merge the two data frame using `bind` function and create one big ultimate data set.
+```
 #1.Merges the training and the test sets to create one data set.
 X <- rbind(te, tr)
 y <- rbind(tel, trl)
 data_set <- cbind(y, X)
 data_set <- tbl_df(data_set)
 ```
-
-#2.Extracts only the measurements on the mean and standard deviation for 
-#each measurement as m & sd
+### After combining test and train data of X and y and creating the complete data set, several statistical computation could be applied.
+```
+#2.Extracts only the measurements on the mean and standard deviation for each measurement as m & sd
 m <- sapply(data_set[, 2:(nrow(cname)+1)], mean)
 sd <- sapply(data_set[, 2:(nrow(cname)+1)], sd)
 
-#5.From the data set in step 4, creates a second, independent tidy data set 
-#with the average of each variable for each activity and each subject as g
+#5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject as g
 g <- aggregate(data_set[, 2:(nrow(cname)+1)], by = data_set[, 1], mean)
+```
+
