@@ -15,8 +15,8 @@ library(dplyr)
 cname <- read.table("./getting & cleaning data project/UCI HAR Dataset/features.txt",
                     col.names = c("seq", "column.name"))
 ```
-### `canme` represent all the variables in the X.txt and I will use that to name the columns of X_test or X_train data.
-### Usig `gsub` & `mutate` function, I am able to use descriptive names for the y_test and y_train.
+### `cname` represent all the variables in the X.txt and I will use that to name the columns of X_test or X_train data.
+### Using `gsub` & `mutate` function, I am able to use descriptive names for the y_test and y_train.
 ```
 #read X_test.txt and give it column names as te
 te <- read.table("./getting & cleaning data project/UCI HAR Dataset/test/X_test.txt",
