@@ -75,7 +75,8 @@ summary(sd)
 ![m](https://github.com/Edward-Aidi/pic-for-week4-project/raw/master/m.png)
 ![sd](https://github.com/Edward-Aidi/pic-for-week4-project/raw/master/sd.png)
 ```
-#5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject as g
+#5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity 
+   and each subject as g
 g <- aggregate(data_set[, 2:(nrow(cname)+1)], by = data_set[, 1], mean)
 ```
 ![g](https://github.com/Edward-Aidi/pic-for-week4-project/raw/master/g.png)
