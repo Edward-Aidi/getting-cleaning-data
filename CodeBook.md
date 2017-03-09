@@ -63,7 +63,7 @@ y <- rbind(tel, trl)
 data_set <- cbind(y, X)
 data_set <- tbl_df(data_set)
 ```
-### Finally, we get the clean data set.
+### Finally, we get a clean data set.
 ![data_set](https://github.com/Edward-Aidi/pic-for-week4-project/raw/master/data_set.png)
 ### After combining test and train data of X and y and creating the complete data set, several statistical computation could be applied.
 ```
@@ -74,8 +74,11 @@ summary(m)
 summary(sd)
 ```
 *Part of the means of the measurement is displyed as follows.*
+
 ![m](https://github.com/Edward-Aidi/pic-for-week4-project/raw/master/m.png)
+
 *Part of the standard deviation of the measurement is displyed as follows.*
+
 ![sd](https://github.com/Edward-Aidi/pic-for-week4-project/raw/master/sd.png)
 ```
 #5.From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity 
