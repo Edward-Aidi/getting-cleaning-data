@@ -69,3 +69,6 @@ data_set <- data_set[, mean_std]
 #5.From the data set in step 4, creates a second, independent tidy data set 
 #with the average of each variable for each activity and each subject as g
 g <- aggregate(data_set[, 2:length(mean_std)], by = data_set[, 1], mean)
+
+#Write into a file, "tidydata.txt"
+write.table(g, file = "./getting & cleaning data project/tidydata.txt", row.name=FALSE)
