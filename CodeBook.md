@@ -1,5 +1,5 @@
 #Run_Analysis.R script
-**The R code for mungling the data provided by the UCI Machine Learning Database will be iluustrated as follows**
+**The R code for mungling the data provided by the UCI Machine Learning Database will be illustrated as follows**
 
 *You should create one R script called run_analysis.R that does the following.*
 
